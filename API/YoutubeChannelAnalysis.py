@@ -15,13 +15,13 @@ class YoutubeChannelAnalysis:
 
     def get_channel_details(self, channel_information) -> []:
         item = channel_information['items'][0]
-        return ([{
+        return [{
             'channelName': item['snippet']['title'],
             'subscribers': item['statistics']['subscriberCount'],
             'totalViews': item['statistics']['viewCount'],
             'totalVideos': item['statistics']['videoCount'],
             'countryCode': item['snippet'].get('country')
-        }])
+        }]
 
 
 if __name__ == '__main__':
