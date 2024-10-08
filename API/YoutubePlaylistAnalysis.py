@@ -69,7 +69,6 @@ if __name__ == '__main__':
             data = pandas.DataFrame([{
                 'video_id': items.get('id'),
                 'title': items['snippet'].get('title'),
-                'tags': items['snippet'].get('tags'),
                 'duration': isodate.parse_duration(duration).total_seconds(),
                 'publised_date': items['snippet'].get('publishedAt'),
                 'like_count': items['statistics'].get('likeCount'),
@@ -77,7 +76,7 @@ if __name__ == '__main__':
             }])
 
             data_frame = pandas.concat([data_frame,data], ignore_index=True)
-    print(data_frame)
-    data_frame = data_frame.drop('tags',axis=1)
-    data_frame.to_excel('C:/Users/deval/OneDrive/Desktop/Programing/data handling/Data Gathering '
-                        'Projects/videoInformation.xlsx')
+    data_frame['publised_date'] = pandas.to_datetime(data_frame['publised_date'])
+    data_frame['publised_date'] = data_frame['publised_date'].dt.strftime('%Y-%m-%d')
+    data_frame.to_excel('C:/Users/deval/OneDrive/Desktop/Programing/data handling/Data Gathering Projects/videoInformation.xlsx')
+    print(data_frame['publised_date'])
