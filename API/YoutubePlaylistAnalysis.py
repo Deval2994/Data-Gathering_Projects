@@ -78,5 +78,3 @@ if __name__ == '__main__':
             data_frame = pandas.concat([data_frame,data], ignore_index=True)
     data_frame['publised_date'] = pandas.to_datetime(data_frame['publised_date'])
     data_frame['publised_date'] = data_frame['publised_date'].dt.strftime('%Y-%m-%d')
-    data_frame.to_excel('C:/Users/deval/OneDrive/Desktop/Programing/data handling/Data Gathering Projects/videoInformation.xlsx')
-    print(data_frame['publised_date'])
