@@ -44,34 +44,6 @@ class YoutubePlaylistAnalysis:
 
         return videoIds
 
-    def get_video_statistics(self, videolist=None) -> []:
-        data = []
-        if videolist is None:
-            raise ValueError('No videos found...')
-        batch_size = 50
-        for i in range(0, len(videolist), batch_size):
-            j = i + batch_size
-            if j >= len(videolist):
-                j = len(videolist) - 1
-            videoIds = ','.join(videolist[i:j])
-            request = self.get_request().videos().list(
-                part='snippet, contentDetails, statistics',
-                id=videoIds
-            )
-            response = request.execute()
-            for items in response['items']:
-                duration = items['contentDetails'].get('duration')
-                data.append([{
-                    'video_id': items.get('id'),
-                    'title': items['snippet'].get('title'),
-                    'tags': items['snippet'].get('tags'),
-                    'duration': isodate.parse_duration(duration).total_seconds(),
-                    'publised_date': items['snippet'].get('publishedAt'),
-                    'like_count': items['statistics'].get('likeCount'),
-                    'views_count': items['statistics'].get('viewCount')
-                }])
-        return data
-
 
 if __name__ == '__main__':
     playlistInsights = YoutubePlaylistAnalysis()
