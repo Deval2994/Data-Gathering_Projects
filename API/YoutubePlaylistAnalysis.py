@@ -1,9 +1,11 @@
 import json
 import os
 import isodate
-
+import matplotlib.pyplot as plt
+import seaborn as sns
 import googleapiclient.discovery
 import pandas
+import pandas as pd
 
 
 class YoutubePlaylistAnalysis:
@@ -78,3 +80,25 @@ if __name__ == '__main__':
             data_frame = pandas.concat([data_frame,data], ignore_index=True)
     data_frame['publised_date'] = pandas.to_datetime(data_frame['publised_date'])
     data_frame['publised_date'] = data_frame['publised_date'].dt.strftime('%Y-%m-%d')
+
+    numeric_cols = ['duration','like_count','views_count']
+    data_frame[numeric_cols] = data_frame[numeric_cols].apply(pd.to_numeric, errors='coerce', axis=1)
+
+    def graph_visulization():
+        ax = sns.barplot(x = 'title'[:10], y='views_count',data=data_frame.sort_values('views_count',ascending=False).head(10))
+        plot = ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
+        for i, bar in enumerate(ax.patches):
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,  # X-coordinate (center of the bar)
+                bar.get_height(),  # Y-coordinate (top of the bar)
+                data_frame.sort_values('views_count', ascending=False).head(10).iloc[i]['title'],
+                # The title to be displayed
+                ha='center',  # Horizontal alignment to center the text above the bar
+                va='bottom',  # Vertical alignment to ensure the text is placed slightly above the bar
+                rotation=90,  # Rotate the text for vertical display
+                fontsize=10,  # Adjust fontsize if needed
+                color='black'  # Color of the text
+            )
+        plt.show()
+
+    graph_visulization()
