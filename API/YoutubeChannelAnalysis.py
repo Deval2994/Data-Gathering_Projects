@@ -25,9 +25,9 @@ class YoutubeChannelAnalysis:
 
 
 if __name__ == '__main__':
-    ChannelInsights = YoutubeChannelAnalysis()
+    channelInsights = YoutubeChannelAnalysis()
     channels = ['tseries', 'WWE', 'setindia', 'zeemusiccompany', 'TaylorSwift']
-    youtube = ChannelInsights.get_request()
+    youtube = channelInsights.get_request()
     data_frame = pandas.DataFrame()
     for channel in channels:
         requests = youtube.channels().list(
@@ -35,7 +35,7 @@ if __name__ == '__main__':
             forUsername=channel
         )
         response = requests.execute()
-        current_data_frame = pandas.DataFrame(ChannelInsights.get_channel_details(response))
+        current_data_frame = pandas.DataFrame(channelInsights.get_channel_details(response))
         data_frame = pandas.concat([data_frame, current_data_frame], ignore_index=True)
 
     print(data_frame)
