@@ -2,6 +2,7 @@ import json
 import os
 import isodate
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 import seaborn as sns
 import googleapiclient.discovery
 import pandas
@@ -49,6 +50,7 @@ class YoutubePlaylistAnalysis:
 
 if __name__ == '__main__':
     playlistInsights = YoutubePlaylistAnalysis()
+    increment = 1
 
     playlistid = 'PLKnIA16_Rmvbr7zKYQuBfsVkjoLcJgxHH'
     video_ids = playlistInsights.get_video_ids(playlistid)
@@ -69,6 +71,7 @@ if __name__ == '__main__':
         for items in response['items']:
             duration = items['contentDetails'].get('duration')
             data = pandas.DataFrame([{
+                'indices': increment,
                 'video_id': items.get('id'),
                 'title': items['snippet'].get('title'),
                 'duration': isodate.parse_duration(duration).total_seconds(),
@@ -76,6 +79,7 @@ if __name__ == '__main__':
                 'like_count': items['statistics'].get('likeCount'),
                 'views_count': items['statistics'].get('viewCount')
             }])
+            increment +=1
 
             data_frame = pandas.concat([data_frame,data], ignore_index=True)
     data_frame['publised_date'] = pandas.to_datetime(data_frame['publised_date'])
@@ -84,32 +88,34 @@ if __name__ == '__main__':
     numeric_cols = ['duration','like_count','views_count']
     data_frame[numeric_cols] = data_frame[numeric_cols].apply(pd.to_numeric, errors='coerce', axis=1)
 
-    data_frame['indexing'] = data_frame.index + 1
-    cols = data_frame.columns.tolist()
-    new_order = [cols[-1]] + cols[:-1]
-    data_frame = data_frame[new_order]
 
     def graph_visualization():
-        # Sort data frame by views count and take the top 10
-        df = data_frame.sort_values('views_count', ascending=False)
-
+        sorted = data_frame.sort_values('views_count', ascending=False)
         # Create the bar plot
-        ax = sns.barplot(x=data_frame['indexing'], y='views_count', data=df)
+        ax = sns.barplot(x=data_frame.index, y='views_count',data=sorted)
+        ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: f"{x/1000:.0f}k"))
+        ax.set_xticks(range(len(ax.get_xticklabels())))  # Setting the ticks
+        # Rotate x-axis labels for better readability
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
 
-        # Add titles above the bars
+        # Annotate each bar with its respective title
         for i, bar in enumerate(ax.patches):
             ax.text(
                 bar.get_x() + bar.get_width() / 2,  # X-coordinate (center of the bar)
                 bar.get_height(),  # Y-coordinate (top of the bar)
-                "  "+df.iloc[i]['video_id'],  # The title to be displayed
+                " " + sorted.iloc[i]['video_id'],
+                # The title to be displayed
                 ha='center',  # Horizontal alignment to center the text above the bar
                 va='bottom',  # Vertical alignment to ensure the text is placed slightly above the bar
+                rotation=90,  # Rotate the text for vertical display
                 fontsize=10,  # Adjust fontsize if needed
-                rotation=90,
                 color='black'  # Color of the text
             )
+        ax.set_xticks(range(len(sorted['indices'])))  # Setting the ticks
+        ax.set_xticklabels(sorted['indices'], rotation=90)  # Setting the labels
+        plt.xlabel('indices')
 
-        # Show the plot
+        # Display the plot
         plt.show()
 
 
