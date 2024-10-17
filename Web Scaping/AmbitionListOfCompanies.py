@@ -1,15 +1,16 @@
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup as bs
-
+from matplotlib import pyplot as plt
 
 class CompanyScraper:
-    def __init__(self, output_file, base_url=None, headers=None, panda_seperate_by=','):
+    def __init__(self, output_file = None, base_url=None, headers=None, panda_seperate_by=','):
         self.base_url = base_url
         self.headers = headers
         self.output_file = output_file
         self.total_rating_count = 0.0
         self.seperate_by = panda_seperate_by
+        self.data_list = []
 
     def write_in_textfile(self, content, mode='a'):
         with open(file=self.output_file, mode=mode, encoding='UTF-8') as file:
@@ -34,12 +35,20 @@ class CompanyScraper:
             rating_count = float(rating_count[:-1]) * 1000
             self.total_rating_count += rating_count
 
-            text = f"{name}{self.seperate_by}{rating}{self.seperate_by}{rated_for}{self.seperate_by}{rating_count / 1000}k\n"
-            self.write_in_textfile(text)
+            self.data_list.append({
+                'Name': name,
+                'Rating': rating,
+                'Highly Rated For': rated_for,
+                'No. of Reviews': f'{rating_count/1000}k'
+            })
+
+    def analyse_data(self, df):
+        plt.bar()
 
 
 # Initialize and use the scraper
 if __name__ == "__main__":
+    data_frame = pd.DataFrame()
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
         'accept-encoding': 'gzip, deflate, br, zstd',
@@ -56,16 +65,17 @@ if __name__ == "__main__":
         'upgrade-insecure-requests': '1',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
     }
-    seperate_key = '#&#'
-    OUTPUT_FILE = 'C:/Users/deval/OneDrive/Desktop/Programing/data handling/Data Gathering Projects/textFile.txt'
+
     PAGE_NO = 1
-    CompanyScraper(output_file=OUTPUT_FILE).write_in_textfile(f"Name{seperate_key}Rating{seperate_key}Highly Rated For{seperate_key}No. of Reviews\n", 'w')
+
     while PAGE_NO <= 503:
         BASE_URL = f'https://www.ambitionbox.com/list-of-companies?campaign=desktop_nav&page={PAGE_NO}'
-        scraper = CompanyScraper(base_url=BASE_URL, headers=headers, output_file=OUTPUT_FILE,
-                                 panda_seperate_by=seperate_key)
+        print(f"Data Extracting from Page no: {PAGE_NO}")
+        scraper = CompanyScraper(base_url=BASE_URL, headers=headers,)
         webpage = scraper.fetch_webpage()
         companies = scraper.get_company_details(webpage)
         scraper.process_companies(companies)
-        print(f"Data Extracted from {PAGE_NO}")
+        # data_frame = pd.concat([data_frame, pd.DataFrame(scraper.data_list)], ignore_index=True) # Load diretcly to Panda.DataFrame()
         PAGE_NO += 1
+
+
