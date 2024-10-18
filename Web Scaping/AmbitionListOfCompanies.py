@@ -1,3 +1,11 @@
+""" This script defines a class `CompanyScraper` that fetches company ratings and reviews from the AmbitionBox website
+    using web scraping techniques. It retrieves details such as company names, ratings, highly rated attributes,
+    and review counts. Initially, web scraping is performed to gather this data, which is then exported to an Excel file
+    for storage. To optimize performance, the script reads from the Excel file in chunks, allowing for efficient data
+    analysis. A bar graph is generated using Matplotlib to visualize the ratings of the companies.
+"""
+
+
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup as bs

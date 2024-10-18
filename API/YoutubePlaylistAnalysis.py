@@ -1,3 +1,11 @@
+""" This script defines a class `YoutubePlaylistAnalysis` that interacts with the YouTube Data API to analyze videos
+    in a specified playlist. It retrieves video IDs and their associated statistics, including title, duration,
+    publication date, like count, and view count. The data is organized into a pandas DataFrame, and a bar plot is
+    generated using Seaborn to visualize the view counts of the videos, sorted in descending order. The bar plot is
+    annotated with video IDs for easy reference.
+"""
+
+
 import json
 import os
 import isodate
