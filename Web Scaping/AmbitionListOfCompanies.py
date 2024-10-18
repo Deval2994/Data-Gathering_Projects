@@ -39,16 +39,25 @@ class CompanyScraper:
                 'Name': name,
                 'Rating': rating,
                 'Highly Rated For': rated_for,
-                'No. of Reviews': f'{rating_count/1000}k'
+                'No. of Reviews': rating_count
             })
 
-    def analyse_data(self, df):
-        plt.bar()
+
 
 
 # Initialize and use the scraper
 if __name__ == "__main__":
-    data_frame = pd.DataFrame()
+
+    def barGraph_analysis(df):
+        plt.figure(figsize=(15, 10))
+        plt.bar(df['Name'], df['Rating'])  # Create the bar graph
+        plt.xticks(rotation=90)  # Rotate x-axis labels to 90 degrees
+
+        plt.show()
+
+
+    # data_frame = pd.DataFrame()
+
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
         'accept-encoding': 'gzip, deflate, br, zstd',
@@ -66,16 +75,32 @@ if __name__ == "__main__":
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
     }
 
-    PAGE_NO = 1
+    # PAGE_NO = 1
+    # total_reviews_count = 0.0
+    # while PAGE_NO <= 503:
+    #     BASE_URL = f'https://www.ambitionbox.com/list-of-companies?campaign=desktop_nav&page={PAGE_NO}'
+    #     print(f"Data Extracting from Page no: {PAGE_NO}")
+    #     scraper = CompanyScraper(base_url=BASE_URL, headers=headers)
+    #     webpage = scraper.fetch_webpage()
+    #     companies = scraper.get_company_details(webpage)
+    #     scraper.process_companies(companies)
+    #     data_frame = pd.concat([data_frame, pd.DataFrame(scraper.data_list)], ignore_index=True) # Load diretcly to Panda.DataFrame()
+    #     PAGE_NO += 1
+    #     total_reviews_count += scraper.total_rating_count
+    # data_frame_export = data_frame[['Name', 'Rating', 'No. of Reviews']]
+    # data_frame = pd.read_excel('C:\\Users\\deval\\OneDrive\\Desktop\\Programing\\data handling\\Data Gathering Projects\\Company.xlsx')
+    file_path = 'C:\\Users\\deval\\OneDrive\\Desktop\\Programing\\data handling\\Data Gathering Projects\\Company.xlsx'
 
-    while PAGE_NO <= 503:
-        BASE_URL = f'https://www.ambitionbox.com/list-of-companies?campaign=desktop_nav&page={PAGE_NO}'
-        print(f"Data Extracting from Page no: {PAGE_NO}")
-        scraper = CompanyScraper(base_url=BASE_URL, headers=headers,)
-        webpage = scraper.fetch_webpage()
-        companies = scraper.get_company_details(webpage)
-        scraper.process_companies(companies)
-        # data_frame = pd.concat([data_frame, pd.DataFrame(scraper.data_list)], ignore_index=True) # Load diretcly to Panda.DataFrame()
-        PAGE_NO += 1
+    # Load the Excel file into a DataFrame
+    data_frame = pd.read_excel(file_path)
 
+    # Define chunk size
+    chunk_size = 1000  # Adjust based on your memory limits
 
+    # Process the DataFrame in chunks
+    for start in range(0, len(data_frame), chunk_size):
+        # Get the chunk of the DataFrame
+        chunk = data_frame.iloc[start:start + chunk_size]
+
+        # Call your analysis function for the sorted chunk
+        barGraph_analysis(chunk)
