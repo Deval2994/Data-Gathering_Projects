@@ -1,0 +1,1 @@
+Python projects focused on data gathering via APIs and web scraping. Collected data is exported into formats like Excel, CSV, text, and SQL. These projects enhance my skills in data collection, handling, and exporting, showcasing practical Python applications in data science.
