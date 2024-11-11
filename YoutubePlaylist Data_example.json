@@ -1,0 +1,155 @@
+
+
+{
+    "kind": "youtube#videoListResponse",
+    "etag": "uej7Z2J_EgNR9jhjhNElPwTAhpM",
+    "items": [
+        {
+            "kind": "youtube#video",
+            "etag": "X__LG10t0xdzl72_wX-dLj0Nby0",
+            "id": "1_bLnsNmhCI",
+            "snippet": {
+                "publishedAt": "2023-12-17T00:29:03Z",
+                "channelId": "UCCWi3hpnq_Pe03nGxuS7isg",
+                "title": "DBSCAN Clustering Algorithms | Density Based Clustering | How DBSCAN Works | CampusX",
+                "description": "In today's video, we dive deep into the world of clustering with a focus on DBSCAN (Density-Based Spatial Clustering of Applications with Noise). Whether you're a data science enthusiast, a student, or a professional looking to enhance your machine learning skills, this video is for you!\n\n\ud83d\ude80 Why DBSCAN?\nDBSCAN is a powerful tool in your clustering toolkit, providing robust performance in identifying clusters of varying shapes and handling outliers effectively.\n\nCode - https://colab.research.google.com/drive/1yZ0bg0cK6X84u6rawgRgoPzlgAmhVy2E?usp=sharing\n\nViz tool - https://www.naftaliharris.com/blog/visualizing-dbscan-clustering/\n\n============================\nDo you want to learn from me?\nCheck my affordable mentorship program at: https://learnwith.campusx.in\n============================\n\n\ud83d\udcf1 Grow with us:\nCampusX' LinkedIn: https://www.linkedin.com/company/campusx-official\nCampusX on Instagram for daily tips: https://www.instagram.com/campusx.official\nMy LinkedIn: https://www.linkedin.com/in/nitish-singh-03412789\nDiscord: https://discord.gg/PsWu8R87Z8\n\n\ud83d\udc4dIf you find this video helpful, consider giving it a thumbs up and subscribing for more educational videos on data science!\n\n\ud83d\udcadShare your thoughts, experiences, or questions in the comments below. I love hearing from you!\n\n\u231aTime Stamps \u231a\n\n00:00 - 00:31 - Intro\n00:32 - 03:59 - Why DBSCAN?\n04:00 - 06:28 - What is density based clustering?\n06:29 - 08:41 - Epsilon Example\n08:42 - 14:12 - 3 Types of points in DBSCAN\n14:13 - 17:58 - Density connected points\n17:59 - 25:20 - DBSCAN Algorithm\n25:21 - 28:55 - DBSCAN Demo\n28:56 - 32:40 - Limitations\n32:41 - 34:00 - Visualization Tool\n34:01 - 34:15 - Outro\n\n\u2728 Hashtags\u2728\n#DataScience #MachineLearning #Deeplearning #CampusX #DBSCAN #Clustering #AlgorithmExplained",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/1_bLnsNmhCI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/1_bLnsNmhCI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/1_bLnsNmhCI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/1_bLnsNmhCI/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/1_bLnsNmhCI/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "CampusX",
+                "tags": [
+                    "Education",
+                    "Engineering",
+                    "Campus",
+                    "Placement",
+                    "Skills",
+                    "Machine Learning",
+                    "Software",
+                    "Web Development"
+                ],
+                "categoryId": "27",
+                "liveBroadcastContent": "none",
+                "localized": {
+                    "title": "DBSCAN Clustering Algorithms | Density Based Clustering | How DBSCAN Works | CampusX",
+                    "description": "In today's video, we dive deep into the world of clustering with a focus on DBSCAN (Density-Based Spatial Clustering of Applications with Noise). Whether you're a data science enthusiast, a student, or a professional looking to enhance your machine learning skills, this video is for you!\n\n\ud83d\ude80 Why DBSCAN?\nDBSCAN is a powerful tool in your clustering toolkit, providing robust performance in identifying clusters of varying shapes and handling outliers effectively.\n\nCode - https://colab.research.google.com/drive/1yZ0bg0cK6X84u6rawgRgoPzlgAmhVy2E?usp=sharing\n\nViz tool - https://www.naftaliharris.com/blog/visualizing-dbscan-clustering/\n\n============================\nDo you want to learn from me?\nCheck my affordable mentorship program at: https://learnwith.campusx.in\n============================\n\n\ud83d\udcf1 Grow with us:\nCampusX' LinkedIn: https://www.linkedin.com/company/campusx-official\nCampusX on Instagram for daily tips: https://www.instagram.com/campusx.official\nMy LinkedIn: https://www.linkedin.com/in/nitish-singh-03412789\nDiscord: https://discord.gg/PsWu8R87Z8\n\n\ud83d\udc4dIf you find this video helpful, consider giving it a thumbs up and subscribing for more educational videos on data science!\n\n\ud83d\udcadShare your thoughts, experiences, or questions in the comments below. I love hearing from you!\n\n\u231aTime Stamps \u231a\n\n00:00 - 00:31 - Intro\n00:32 - 03:59 - Why DBSCAN?\n04:00 - 06:28 - What is density based clustering?\n06:29 - 08:41 - Epsilon Example\n08:42 - 14:12 - 3 Types of points in DBSCAN\n14:13 - 17:58 - Density connected points\n17:59 - 25:20 - DBSCAN Algorithm\n25:21 - 28:55 - DBSCAN Demo\n28:56 - 32:40 - Limitations\n32:41 - 34:00 - Visualization Tool\n34:01 - 34:15 - Outro\n\n\u2728 Hashtags\u2728\n#DataScience #MachineLearning #Deeplearning #CampusX #DBSCAN #Clustering #AlgorithmExplained"
+                },
+                "defaultAudioLanguage": "hi"
+            },
+            "contentDetails": {
+                "duration": "PT34M16S",
+                "dimension": "2d",
+                "definition": "hd",
+                "caption": "false",
+                "licensedContent": true,
+                "contentRating": {},
+                "projection": "rectangular"
+            },
+            "statistics": {
+                "viewCount": "20230",
+                "likeCount": "702",
+                "favoriteCount": "0",
+                "commentCount": "70"
+            }
+        },
+        {
+            "kind": "youtube#video",
+            "etag": "tI54rRiOK1abNuSsU2Sw2EVVkOI",
+            "id": "yh2AKoJCV3k",
+            "snippet": {
+                "publishedAt": "2024-05-04T09:29:32Z",
+                "channelId": "UCCWi3hpnq_Pe03nGxuS7isg",
+                "title": "Imbalanced Data in Machine Learning | Undersampling | Oversampling | SMOTE",
+                "description": "Imbalanced data refers to datasets where the distribution of classes is heavily skewed, with one class significantly outnumbering the others. Dealing with imbalanced data is crucial as it can lead to biased models that perform poorly on minority classes. Addressing Class Imbalance with Undersampling, Oversampling, SMOTE, and Ensemble Methods. Imbalanced datasets pose challenges for machine learning models, but techniques like undersampling (reducing majority class samples), oversampling (increasing minority class samples), SMOTE (Synthetic Minority Over-sampling Technique), and ensemble methods (combining multiple models) help mitigate bias and improve predictive performance on minority classes.\n\nCode - https://colab.research.google.com/drive/1oHwgsV6_DHt-m-Hxl8DuM-BQbKJrqvcK?usp=sharing\n\n============================\nDid you like my teaching style?\nCheck my affordable mentorship program at : https://learnwith.campusx.in\nDSMP FAQ: https://docs.google.com/document/d/1OsMe9jGHoZS67FH8TdIzcUaDWuu5RAbCbBKk2cNq6Dk/edit#heading=h.gvv0r2jo3vjw\n============================\n\n\ud83d\udcf1 Grow with us:\nCampusX' LinkedIn: https://www.linkedin.com/company/campusx-official\nCampusX on Instagram for daily tips: https://www.instagram.com/campusx.official\nMy LinkedIn: https://www.linkedin.com/in/nitish-singh-03412789\nDiscord: https://discord.gg/PsWu8R87Z8\nE-mail us at support@campusx.in\n\n\u2728 Hashtags\u2728\n#Datascience #Machinelearning #Imbalanceddata #CampusX\n\n\u231aTime Stamps\u231a\n\n00:00 - Intro\n00:54 - What is Imbalanced Data?\n04:10 - Problems with Imbalanced Data\n08:00 - Imbalanced Data Demo\n11:13 - Why studying imbalanced data is important?\n16:58 - Undersampling\n25:56 - Oversampling\n31:06 - SMOTE\n42:43 - Ensemble Learning\n47:06 - Cost Sensitive Learning\n\n51:30 - Other techniques",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/yh2AKoJCV3k/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/yh2AKoJCV3k/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/yh2AKoJCV3k/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/yh2AKoJCV3k/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/yh2AKoJCV3k/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "CampusX",
+                "tags": [
+                    "Education",
+                    "Engineering",
+                    "Campus",
+                    "Placement",
+                    "Skills",
+                    "Machine Learning",
+                    "Software",
+                    "Web Development",
+                    "Profile Building"
+                ],
+                "categoryId": "27",
+                "liveBroadcastContent": "none",
+                "localized": {
+                    "title": "Imbalanced Data in Machine Learning | Undersampling | Oversampling | SMOTE",
+                    "description": "Imbalanced data refers to datasets where the distribution of classes is heavily skewed, with one class significantly outnumbering the others. Dealing with imbalanced data is crucial as it can lead to biased models that perform poorly on minority classes. Addressing Class Imbalance with Undersampling, Oversampling, SMOTE, and Ensemble Methods. Imbalanced datasets pose challenges for machine learning models, but techniques like undersampling (reducing majority class samples), oversampling (increasing minority class samples), SMOTE (Synthetic Minority Over-sampling Technique), and ensemble methods (combining multiple models) help mitigate bias and improve predictive performance on minority classes.\n\nCode - https://colab.research.google.com/drive/1oHwgsV6_DHt-m-Hxl8DuM-BQbKJrqvcK?usp=sharing\n\n============================\nDid you like my teaching style?\nCheck my affordable mentorship program at : https://learnwith.campusx.in\nDSMP FAQ: https://docs.google.com/document/d/1OsMe9jGHoZS67FH8TdIzcUaDWuu5RAbCbBKk2cNq6Dk/edit#heading=h.gvv0r2jo3vjw\n============================\n\n\ud83d\udcf1 Grow with us:\nCampusX' LinkedIn: https://www.linkedin.com/company/campusx-official\nCampusX on Instagram for daily tips: https://www.instagram.com/campusx.official\nMy LinkedIn: https://www.linkedin.com/in/nitish-singh-03412789\nDiscord: https://discord.gg/PsWu8R87Z8\nE-mail us at support@campusx.in\n\n\u2728 Hashtags\u2728\n#Datascience #Machinelearning #Imbalanceddata #CampusX\n\n\u231aTime Stamps\u231a\n\n00:00 - Intro\n00:54 - What is Imbalanced Data?\n04:10 - Problems with Imbalanced Data\n08:00 - Imbalanced Data Demo\n11:13 - Why studying imbalanced data is important?\n16:58 - Undersampling\n25:56 - Oversampling\n31:06 - SMOTE\n42:43 - Ensemble Learning\n47:06 - Cost Sensitive Learning\n\n51:30 - Other techniques"
+                },
+                "defaultAudioLanguage": "hi"
+            },
+            "contentDetails": {
+                "duration": "PT57M17S",
+                "dimension": "2d",
+                "definition": "hd",
+                "caption": "false",
+                "licensedContent": true,
+                "contentRating": {},
+                "projection": "rectangular"
+            },
+            "statistics": {
+                "viewCount": "17679",
+                "likeCount": "615",
+                "favoriteCount": "0",
+                "commentCount": "64"
+            }
+        }
+    ],
+    "pageInfo": {
+        "totalResults": 2,
+        "resultsPerPage": 2
+    }
+}
