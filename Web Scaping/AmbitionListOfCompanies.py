@@ -102,8 +102,8 @@ if __name__ == "__main__":
 
     # Export the relevant columns to a new DataFrame for analysis
     data_frame_export = data_frame[['Name', 'Rating', 'No. of Reviews']]
-    data_frame = pd.read_excel('C:\\Users\\deval\\OneDrive\\Desktop\\Programing\\data handling\\Data Gathering Projects\\Company.xlsx')  # Read existing data from Excel
-    file_path = 'C:\\Users\\deval\\OneDrive\\Desktop\\Programing\\data handling\\Data Gathering Projects\\Company.xlsx'  # File path for output
+    data_frame = pd.read_excel('C:\\Users\\deval\\OneDrive\\Desktop\\Programing\\data handling\\Data Gathering Projects\\Company Data_example.xlsx')  # Read existing data from Excel
+    file_path = '/Company Data_example.xlsx'  # File path for output
 
     # Define chunk size for processing large DataFrames
     chunk_size = 1000  # Adjust based on your memory limits
